@@ -1,0 +1,39 @@
+# Użyj obrazu Debian
+FROM debian:latest
+
+# Aktualizuj system i zainstaluj niezbędne pakiety
+RUN apt-get update && \
+    apt-get install -y curl wget unzip && \
+    rm -rf /var/lib/apt/lists/*
+
+# Instaluj JDK 11 (dla Kotlina)
+RUN apt-get update && \
+    apt-get install -y openjdk-11-jdk && \
+    rm -rf /var/lib/apt/lists/*
+
+# Instaluj Kotlin
+RUN curl -s https://get.sdkman.io | bash
+RUN bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && sdk install kotlin"
+
+# Instaluj sbt (Simple Build Tool) dla Kotlina
+RUN apt-get update && \
+    apt-get install -y apt-transport-https && \
+    echo "deb https://dl.bintray.com/sbt/debian /" | tee -a /etc/apt/sources.list.d/sbt.list && \
+    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 642AC823 && \
+    apt-get update && \
+    apt-get install -y sbt && \
+    rm -rf /var/lib/apt/lists/*
+
+# Dodaj klint do statycznej analizy kodu w Kotlinie
+RUN curl -sSLO "https://github.com/pinterest/ktlint/releases/download/0.42.1/ktlint" && \
+    chmod a+x ktlint && \
+    mv ktlint /usr/local/bin/
+
+# Ustaw katalog roboczy
+WORKDIR /app
+
+# Skopiuj kod aplikacji do katalogu roboczego w obrazie
+COPY . .
+
+# Domyślnie uruchamiaj shella
+CMD ["/bin/bash"]
