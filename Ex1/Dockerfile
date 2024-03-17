@@ -10,5 +10,9 @@ RUN apt-get update &&\
         apt-get update &&\
         apt-get install -y python3.8
 
-#RUN apt-get install -y openjdk-8-jdk
-#RUN apt-get -y install kotlin
+RUN apt-get install -y openjdk-8-jdk
+RUN apt-get -y install kotlin
+
+RUN java -version
+RUN find / -name kotlinc
+RUN /usr/bin/kotlinc -version
