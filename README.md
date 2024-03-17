@@ -1,6 +1,6 @@
 **Zadanie 1** [Docker](https://github.com/ewakobrzynska/Ebiznes/tree/main/Ex1)
 
-:white_check_mark: 3.0 wymaganie 1 [Link do commita 1](https://github.com/ewakobrzynska/ProjektowanieObiektowe/commit/74023fc667eb6dd1cd4a1171e3407b9bddb1728a)
+:white_check_mark: 3.0 wymaganie 1 [Link do commita 1](https://github.com/ewakobrzynska/Ebiznes/commit/6d50b574b8d617dc16c6a3eed0dcc88f9399b271)
 
 :white_check_mark: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/ewakobrzynska/Ebiznes/commit/1f6092d52a8ebb602a6826a8512824272609c495)
 
