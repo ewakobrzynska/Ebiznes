@@ -2,7 +2,7 @@
 
 :white_check_mark: 3.0 wymaganie 1 [Link do commita 1](https://github.com/ewakobrzynska/ProjektowanieObiektowe/commit/74023fc667eb6dd1cd4a1171e3407b9bddb1728a)
 
-:x: 3.5 wymaganie 2 [Link do commita2 ]
+:x: 3.5 wymaganie 2 [Link do commita2 ](https://github.com/ewakobrzynska/Ebiznes/commit/1f6092d52a8ebb602a6826a8512824272609c495)
 
 :x: 4.0 wymaganie 3 [Link do commita 3]
 

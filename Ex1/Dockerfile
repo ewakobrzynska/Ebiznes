@@ -13,6 +13,10 @@ RUN apt-get update &&\
 RUN apt-get install -y openjdk-8-jdk
 RUN apt-get -y install kotlin
 
-RUN java -version
-RUN find / -name kotlinc
-RUN /usr/bin/kotlinc -version
+#RUN java -version
+#RUN find / -name kotlinc
+#RUN /usr/bin/kotlinc -version
+
+
+
+
