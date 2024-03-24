@@ -14,9 +14,9 @@
 
 **Zadanie 2** [Scala](https://github.com/ewakobrzynska/Ebiznes/tree/main/ex2)
 
-:x: 3.0 wymaganie 1 [Link do commita 1](https://github.com/ewakobrzynska/Ebiznes/commit/9b6983b8ffdd862aa16a5229d35ce2e039769d51)
+:white_check_mark:  3.0 wymaganie 1 [Link do commita 1](https://github.com/ewakobrzynska/Ebiznes/commit/9b6983b8ffdd862aa16a5229d35ce2e039769d51)
 
-:x: 3.5 wymaganie 2 [Link do commita 2](https://github.com/ewakobrzynska/Ebiznes/commit/39c693333b50b621df4f610d1876c5348a65e8b2)
+:white_check_mark:  3.5 wymaganie 2 [Link do commita 2](https://github.com/ewakobrzynska/Ebiznes/commit/39c693333b50b621df4f610d1876c5348a65e8b2)
 
 :x: 4.0 wymaganie 3 [Link do commita 3]
 
