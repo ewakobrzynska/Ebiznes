@@ -37,4 +37,42 @@ class ProductController @Inject()(val controllerComponents: ControllerComponents
     }
   }
 
+  // POST new product
+  def addNewProduct(): Action[JsValue] = Action(parse.json) { request =>
+    request.body.validate[Product] match {
+      case JsSuccess(product, _) =>
+        val newId = products.map(_.id).max + 1
+        val newProduct = product.copy(id = newId)
+        products += newProduct
+        Created(Json.toJson(newProduct))
+      case JsError(errors) =>
+        BadRequest(Json.obj("message" -> JsError.toJson(errors)))
+    }
+  }
+
+  // PUT update product
+  def updateProduct(productId: Int): Action[JsValue] = Action(parse.json) { request =>
+    request.body.validate[Product] match {
+      case JsSuccess(updatedProduct, _) =>
+        products.indexWhere(_.id == productId) match {
+          case -1 => NotFound
+          case index =>
+            products.update(index, updatedProduct.copy(id = productId))
+            Ok(Json.toJson(updatedProduct))
+        }
+      case JsError(errors) =>
+        BadRequest(Json.obj("message" -> JsError.toJson(errors)))
+    }
+  }
+
+  // DELETE product
+  def deleteProduct(productId: Int): Action[AnyContent] = Action {
+    products.indexWhere(_.id == productId) match {
+      case -1 => NotFound
+      case index =>
+        val deletedProduct = products.remove(index)
+        Ok(Json.toJson(deletedProduct))
+    }
+  }
+
 }
