@@ -19,4 +19,22 @@ class ProductController @Inject()(val controllerComponents: ControllerComponents
 
   implicit val productJson = Json.format[Product]
 
+  // GET All
+  def getAll(): Action[AnyContent] = Action {
+    if (products.isEmpty){
+      NoContent
+    } else {
+      Ok(Json.toJson(products))
+    }
+  }
+
+  // GET with ID
+  def getProduct(productId: Int) = Action {
+    val product = products.find(_.id == productId)
+    product match {
+      case None => NotFound
+      case Some(item) => Ok(Json.toJson(item))
+    }
+  }
+
 }
