@@ -1,40 +1,22 @@
 package controllers
 
-import org.scalatestplus.play._
-import org.scalatestplus.play.guice._
-import play.api.test._
-import play.api.test.Helpers._
+import javax.inject._
+import play.api._
+import play.api.mvc._
+import play.api.libs.json._
+import scala.collection.mutable
 
+case class Product(id: Int, title: String, director: String, price: Double, stock: Int, description: String)
 
-class HomeControllerSpec extends PlaySpec with GuiceOneAppPerTest with Injecting {
+@Singleton
+class ProductController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
 
-  "HomeController GET" should {
+  private val products = new mutable.ListBuffer[Product]()
+  products += Product(1, "Inception", "Christopher Nolan", 39.99, 20, "A mind-bending thriller")
+  products += Product(2, "The Godfather", "Francis Ford Coppola", 35.99, 15, "A mafia epic")
+  products += Product(3, "Parasite", "Bong Joon-ho", 28.99, 10, "A dark comedy about class struggle")
+  products += Product(4, "Schindler's List", "Steven Spielberg", 37.99, 22, "A poignant drama about the Holocaust")
 
-    "render the index page from a new instance of controller" in {
-      val controller = new HomeController(stubControllerComponents())
-      val home = controller.index().apply(FakeRequest(GET, "/"))
+  implicit val productJson = Json.format[Product]
 
-      status(home) mustBe OK
-      contentType(home) mustBe Some("text/html")
-      contentAsString(home) must include ("Welcome to Play")
-    }
-
-    "render the index page from the application" in {
-      val controller = inject[HomeController]
-      val home = controller.index().apply(FakeRequest(GET, "/"))
-
-      status(home) mustBe OK
-      contentType(home) mustBe Some("text/html")
-      contentAsString(home) must include ("Welcome to Play")
-    }
-
-    "render the index page from the router" in {
-      val request = FakeRequest(GET, "/")
-      val home = route(app, request).get
-
-      status(home) mustBe OK
-      contentType(home) mustBe Some("text/html")
-      contentAsString(home) must include ("Welcome to Play")
-    }
-  }
 }
