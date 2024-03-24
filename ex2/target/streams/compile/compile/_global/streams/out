@@ -1,0 +1,136 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:3:14: object inject is not a member of package javax[0m
+[0m[[0m[31merror[0m] [0m[0mimport javax.inject._[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:4:8: not found: object play[0m
+[0m[[0m[31merror[0m] [0m[0mimport play.api._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:5:8: not found: object play[0m
+[0m[[0m[31merror[0m] [0m[0mimport play.api.mvc._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:6:8: not found: object play[0m
+[0m[[0m[31merror[0m] [0m[0mimport play.api.libs.json._[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:8:14: object inject is not a member of package javax[0m
+[0m[[0m[31merror[0m] [0m[0mimport javax.inject.Inject  // Dodatkowy import dla @Inject[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:14:91: not found: type BaseController[0m
+[0m[[0m[31merror[0m] [0m[0mclass ProductController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:13:2: trait Singleton is abstract; cannot be instantiated[0m
+[0m[[0m[31merror[0m] [0m[0m@Singleton[0m
+[0m[[0m[31merror[0m] [0m[0m ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:14:61: not found: type ControllerComponents[0m
+[0m[[0m[31merror[0m] [0m[0mclass ProductController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:14:26: not found: type Inject[0m
+[0m[[0m[31merror[0m] [0m[0mclass ProductController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:22:30: not found: value Json[0m
+[0m[[0m[31merror[0m] [0m[0m  implicit val productJson = Json.format[Product][0m
+[0m[[0m[31merror[0m] [0m[0m                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:25:17: not found: type Action[0m
+[0m[[0m[31merror[0m] [0m[0m  def getAll(): Action[AnyContent] = Action {[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:25:38: not found: value Action[0m
+[0m[[0m[31merror[0m] [0m[0m  def getAll(): Action[AnyContent] = Action {[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:27:7: not found: value NoContent[0m
+[0m[[0m[31merror[0m] [0m[0m      NoContent[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:29:7: not found: value Ok[0m
+[0m[[0m[31merror[0m] [0m[0m      Ok(Json.toJson(products))[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:29:10: not found: value Json[0m
+[0m[[0m[31merror[0m] [0m[0m      Ok(Json.toJson(products))[0m
+[0m[[0m[31merror[0m] [0m[0m         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:34:36: not found: value Action[0m
+[0m[[0m[31merror[0m] [0m[0m  def getProduct(productId: Int) = Action {[0m
+[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:37:20: not found: value NotFound[0m
+[0m[[0m[31merror[0m] [0m[0m      case None => NotFound[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:38:26: not found: value Ok[0m
+[0m[[0m[31merror[0m] [0m[0m      case Some(item) => Ok(Json.toJson(item))[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:38:29: not found: value Json[0m
+[0m[[0m[31merror[0m] [0m[0m      case Some(item) => Ok(Json.toJson(item))[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:43:24: not found: type Action[0m
+[0m[[0m[31merror[0m] [0m[0m  def addNewProduct(): Action[JsValue] = Action(parse.json) { request =>[0m
+[0m[[0m[31merror[0m] [0m[0m                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:43:42: not found: value Action[0m
+[0m[[0m[31merror[0m] [0m[0m  def addNewProduct(): Action[JsValue] = Action(parse.json) { request =>[0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:43:49: not found: value parse[0m
+[0m[[0m[31merror[0m] [0m[0m  def addNewProduct(): Action[JsValue] = Action(parse.json) { request =>[0m
+[0m[[0m[31merror[0m] [0m[0m                                                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:45:12: not found: value JsSuccess[0m
+[0m[[0m[31merror[0m] [0m[0m      case JsSuccess(product, _) =>[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:49:9: not found: value Created[0m
+[0m[[0m[31merror[0m] [0m[0m        Created(Json.toJson(newProduct))[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:49:17: not found: value Json[0m
+[0m[[0m[31merror[0m] [0m[0m        Created(Json.toJson(newProduct))[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:50:12: not found: value JsError[0m
+[0m[[0m[31merror[0m] [0m[0m      case JsError(errors) =>[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:51:9: not found: value BadRequest[0m
+[0m[[0m[31merror[0m] [0m[0m        BadRequest(Json.obj("message" -> JsError.toJson(errors)))[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:51:20: not found: value Json[0m
+[0m[[0m[31merror[0m] [0m[0m        BadRequest(Json.obj("message" -> JsError.toJson(errors)))[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:51:42: not found: value JsError[0m
+[0m[[0m[31merror[0m] [0m[0m        BadRequest(Json.obj("message" -> JsError.toJson(errors)))[0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:56:38: not found: type Action[0m
+[0m[[0m[31merror[0m] [0m[0m  def updateProduct(productId: Int): Action[JsValue] = Action(parse.json) { request =>[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:56:56: not found: value Action[0m
+[0m[[0m[31merror[0m] [0m[0m  def updateProduct(productId: Int): Action[JsValue] = Action(parse.json) { request =>[0m
+[0m[[0m[31merror[0m] [0m[0m                                                       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:56:63: not found: value parse[0m
+[0m[[0m[31merror[0m] [0m[0m  def updateProduct(productId: Int): Action[JsValue] = Action(parse.json) { request =>[0m
+[0m[[0m[31merror[0m] [0m[0m                                                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:58:12: not found: value JsSuccess[0m
+[0m[[0m[31merror[0m] [0m[0m      case JsSuccess(updatedProduct, _) =>[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:60:22: not found: value NotFound[0m
+[0m[[0m[31merror[0m] [0m[0m          case -1 => NotFound[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:63:13: not found: value Ok[0m
+[0m[[0m[31merror[0m] [0m[0m            Ok(Json.toJson(updatedProduct))[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:63:16: not found: value Json[0m
+[0m[[0m[31merror[0m] [0m[0m            Ok(Json.toJson(updatedProduct))[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:65:12: not found: value JsError[0m
+[0m[[0m[31merror[0m] [0m[0m      case JsError(errors) =>[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:66:9: not found: value BadRequest[0m
+[0m[[0m[31merror[0m] [0m[0m        BadRequest(Json.obj("message" -> JsError.toJson(errors)))[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:66:20: not found: value Json[0m
+[0m[[0m[31merror[0m] [0m[0m        BadRequest(Json.obj("message" -> JsError.toJson(errors)))[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:66:42: not found: value JsError[0m
+[0m[[0m[31merror[0m] [0m[0m        BadRequest(Json.obj("message" -> JsError.toJson(errors)))[0m
+[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:71:38: not found: type Action[0m
+[0m[[0m[31merror[0m] [0m[0m  def deleteProduct(productId: Int): Action[AnyContent] = Action {[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:71:59: not found: value Action[0m
+[0m[[0m[31merror[0m] [0m[0m  def deleteProduct(productId: Int): Action[AnyContent] = Action {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:73:18: not found: value NotFound[0m
+[0m[[0m[31merror[0m] [0m[0m      case -1 => NotFound[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:76:9: not found: value Ok[0m
+[0m[[0m[31merror[0m] [0m[0m        Ok(Json.toJson(deletedProduct))[0m
+[0m[[0m[31merror[0m] [0m[0m        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ewakobrzynska/VSCode/Ebiznes/ex2/ProductController.scala:76:12: not found: value Json[0m
+[0m[[0m[31merror[0m] [0m[0m        Ok(Json.toJson(deletedProduct))[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m45 errors found[0m

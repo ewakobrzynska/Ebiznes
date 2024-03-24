@@ -5,6 +5,8 @@ import play.api._
 import play.api.mvc._
 import play.api.libs.json._
 import scala.collection.mutable
+import javax.inject.Inject  // Dodatkowy import dla @Inject
+
 
 case class Product(id: Int, title: String, director: String, price: Double, stock: Int, description: String)
 
