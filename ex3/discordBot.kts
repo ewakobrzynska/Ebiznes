@@ -1,14 +1,14 @@
-import com.kordlib.common.entity.Snowflake
+import com.gitlab.kordlib.common.entity.Snowflake
 import com.kordlib.core.Kord
-import com.kordlib.core.event.message.MessageCreateEvent
-import com.kordlib.core.on
-import io.ktor.application.*
-import io.ktor.features.*
-import io.ktor.request.*
-import io.ktor.response.*
-import io.ktor.routing.*
+import com.gitlab.kordlib.core.event.message.MessageCreateEvent
+import com.gitlab.kordlib.core.on
+import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
+import io.ktor.server.request.*
+import io.ktor.server.response.*
+import io.ktor.server.routing.*
+
 
 fun main() {
     val botToken = "YOUR_BOT_TOKEN"
