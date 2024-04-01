@@ -26,10 +26,9 @@
 
 
 
-**Zadanie 3** [Kotlin]
+**Zadanie 3** [Kotlin](https://github.com/ewakobrzynska/Ebiznes/tree/main/ebiznes3)
 
-
-:x: 3.0 Należy stworzyć aplikację kliencką w Kotlinie we frameworku Ktor, która pozwala na przesyłanie wiadomości na platformę Discord
+:white_check_mark: 3.0 Należy stworzyć aplikację kliencką w Kotlinie we frameworku Ktor, która pozwala na przesyłanie wiadomości na platformę Discord [Link do commita 1](https://github.com/ewakobrzynska/Ebiznes/commit/4e3ca19c5e01c3d3503866427b9b083e57f8f7ec)
 
 :x: 3.5 Aplikacja jest w stanie odbierać wiadomości użytkowników z platformy Discord skierowane do aplikacji (bota)
 
