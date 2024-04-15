@@ -3,6 +3,7 @@ package main
 import (
     "net/http"
     "strconv"
+    "encoding/json"
 
     "github.com/labstack/echo/v4"
 )
@@ -19,7 +20,14 @@ var products = []Product{
 }
 
 func getAllProducts(c echo.Context) error {
-    return c.JSON(http.StatusOK, products)
+    prettyProducts, err := json.MarshalIndent(products, "", "  ")
+    if err != nil {
+        return err
+    }
+
+    c.Response().Header().Set(echo.HeaderContentType, echo.MIMEApplicationJSONCharsetUTF8)
+    c.Response().Write(prettyProducts)
+    return nil
 }
 
 func getProductByID(c echo.Context) error {
@@ -96,4 +104,3 @@ func main() {
 
     e.Logger.Fatal(e.Start(":8080"))
 }
-
