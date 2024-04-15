@@ -40,13 +40,13 @@
 
 
 
-**Zadanie 4** [Go]
+**Zadanie 4** [Go](https://github.com/ewakobrzynska/Ebiznes/tree/main/ex4)
 
-:white_check_mark: 3.0 Należy stworzyć aplikację we frameworki echo w j. Go, która będzie miała kontroler Produktów zgodny z CRUD
+:white_check_mark: 3.0 Należy stworzyć aplikację we frameworki echo w j. Go, która będzie miała kontroler Produktów zgodny z CRUD [Link do commita1](https://github.com/ewakobrzynska/Ebiznes/commit/7df271924ee932c7598b15e2742af622d19a1e1a)
 
-:white_check_mark: 3.5 Należy stworzyć model Produktów wykorzystując gorm oraz wykorzystać model do obsługi produktów (CRUD) w kontrolerze (zamiast listy)
+:white_check_mark: 3.5 Należy stworzyć model Produktów wykorzystując gorm oraz wykorzystać model do obsługi produktów (CRUD) w kontrolerze (zamiast listy) [Link do commita2](https://github.com/ewakobrzynska/Ebiznes/commit/b75f46b20d78c061b7333bbd8ed7cc62c00c9635)
 
-:white_check_mark: 4.0 Należy dodać model Koszyka oraz dodać odpowiedni endpoint
+:white_check_mark: 4.0 Należy dodać model Koszyka oraz dodać odpowiedni endpoint [Link do commita3](https://github.com/ewakobrzynska/Ebiznes/commit/31855bc1191f4602aff9cb3f13e24d4d02b03660)
 
 :x: 4.5 Należy stworzyć model kategorii i dodać relację między kategorią, a produktem
 
