@@ -4,13 +4,19 @@ import (
 	"github.com/labstack/echo/v4"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
-    "net/http"
+	"net/http"
 )
 
 type Product struct {
 	gorm.Model
 	Name  string `json:"name"`
 	Price int    `json:"price"`
+}
+
+type Cart struct {
+	gorm.Model
+	ProductID uint `json:"product_id"`
+	Quantity  int  `json:"quantity"`
 }
 
 var db *gorm.DB
@@ -31,7 +37,6 @@ func initDB() {
 	db = database
 }
 
-
 func main() {
 	initDB()
 
@@ -44,12 +49,38 @@ func main() {
 	e.PUT("/products/:id", updateProduct)
 	e.DELETE("/products/:id", deleteProduct)
 
+	// Routes for Cart
+	e.GET("/cart", getCartItems)
+	e.POST("/cart", addToCart)
+	e.DELETE("/cart/:id", removeFromCart)
+
 	e.Logger.Fatal(e.Start(":8080"))
 
-    e.GET("/", func(c echo.Context) error {
-        return c.String(http.StatusOK, "Witaj! Aby zobaczyć wszystkie produkty, odwiedź /products.")
-    })
-    
+	e.GET("/", func(c echo.Context) error {
+		return c.String(http.StatusOK, "Witaj! Aby zobaczyć wszystkie produkty, odwiedź /products.")
+	})
+}
+
+func addToCart(c echo.Context) error {
+	var cart Cart
+	if err := c.Bind(&cart); err != nil {
+		return err
+	}
+
+	db.Create(&cart)
+	return c.JSON(http.StatusCreated, cart)
+}
+
+func getCartItems(c echo.Context) error {
+	var cartItems []Cart
+	db.Find(&cartItems)
+	return c.JSON(http.StatusOK, cartItems)
+}
+
+func removeFromCart(c echo.Context) error {
+	id := c.Param("id")
+	db.Delete(&Cart{}, id)
+	return c.NoContent(http.StatusNoContent)
 }
 
 func getAllProducts(c echo.Context) error {
