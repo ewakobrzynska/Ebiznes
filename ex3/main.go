@@ -1,106 +1,94 @@
 package main
 
 import (
+	"github.com/labstack/echo/v4"
+	"gorm.io/driver/sqlite"
+	"gorm.io/gorm"
     "net/http"
-    "strconv"
-    "encoding/json"
-
-    "github.com/labstack/echo/v4"
 )
 
 type Product struct {
-    ID    int    `json:"id"`
-    Name  string `json:"name"`
-    Price int    `json:"price"`
+	gorm.Model
+	Name  string `json:"name"`
+	Price int    `json:"price"`
 }
 
-var products = []Product{
-    {ID: 1, Name: "Product 1", Price: 100},
-    {ID: 2, Name: "Product 2", Price: 200},
+var db *gorm.DB
+
+func initDB() {
+	database, err := gorm.Open(sqlite.Open("products.db"), &gorm.Config{})
+	if err != nil {
+		panic("Failed to connect to database")
+	}
+
+	database.AutoMigrate(&Product{})
+
+	// Dodajemy kilka przykładowych produktów
+	database.Create(&Product{Name: "Produkt 1", Price: 100})
+	database.Create(&Product{Name: "Produkt 2", Price: 200})
+	database.Create(&Product{Name: "Produkt 3", Price: 300})
+
+	db = database
+}
+
+
+func main() {
+	initDB()
+
+	e := echo.New()
+
+	// Routes for Product controller
+	e.GET("/products", getAllProducts)
+	e.GET("/products/:id", getProductByID)
+	e.POST("/products", createProduct)
+	e.PUT("/products/:id", updateProduct)
+	e.DELETE("/products/:id", deleteProduct)
+
+	e.Logger.Fatal(e.Start(":8080"))
+
+    e.GET("/", func(c echo.Context) error {
+        return c.String(http.StatusOK, "Witaj! Aby zobaczyć wszystkie produkty, odwiedź /products.")
+    })
+    
 }
 
 func getAllProducts(c echo.Context) error {
-    prettyProducts, err := json.MarshalIndent(products, "", "  ")
-    if err != nil {
-        return err
-    }
-
-    c.Response().Header().Set(echo.HeaderContentType, echo.MIMEApplicationJSONCharsetUTF8)
-    c.Response().Write(prettyProducts)
-    return nil
+	var products []Product
+	db.Find(&products)
+	return c.JSON(http.StatusOK, products)
 }
 
 func getProductByID(c echo.Context) error {
-    id, err := strconv.Atoi(c.Param("id"))
-    if err != nil {
-        return err
-    }
-
-    for _, p := range products {
-        if p.ID == id {
-            return c.JSON(http.StatusOK, p)
-        }
-    }
-
-    return echo.NewHTTPError(http.StatusNotFound, "Product not found")
+	id := c.Param("id")
+	var product Product
+	if err := db.First(&product, id).Error; err != nil {
+		return echo.NewHTTPError(http.StatusNotFound, "Product not found")
+	}
+	return c.JSON(http.StatusOK, product)
 }
 
 func createProduct(c echo.Context) error {
-    var product Product
-    if err := c.Bind(&product); err != nil {
-        return err
-    }
-
-    products = append(products, product)
-    return c.JSON(http.StatusCreated, product)
+	product := new(Product)
+	if err := c.Bind(product); err != nil {
+		return err
+	}
+	db.Create(product)
+	return c.JSON(http.StatusCreated, product)
 }
 
 func updateProduct(c echo.Context) error {
-    id, err := strconv.Atoi(c.Param("id"))
-    if err != nil {
-        return err
-    }
-
-    var updatedProduct Product
-    if err := c.Bind(&updatedProduct); err != nil {
-        return err
-    }
-
-    for i, p := range products {
-        if p.ID == id {
-            products[i] = updatedProduct
-            return c.JSON(http.StatusOK, updatedProduct)
-        }
-    }
-
-    return echo.NewHTTPError(http.StatusNotFound, "Product not found")
+	id := c.Param("id")
+	product := new(Product)
+	if err := c.Bind(product); err != nil {
+		return err
+	}
+	db.Model(&Product{}).Where("id = ?", id).Updates(product)
+	return c.NoContent(http.StatusOK)
 }
 
 func deleteProduct(c echo.Context) error {
-    id, err := strconv.Atoi(c.Param("id"))
-    if err != nil {
-        return err
-    }
-
-    for i, p := range products {
-        if p.ID == id {
-            products = append(products[:i], products[i+1:]...)
-            return c.NoContent(http.StatusNoContent)
-        }
-    }
-
-    return echo.NewHTTPError(http.StatusNotFound, "Product not found")
+	id := c.Param("id")
+	db.Delete(&Product{}, id)
+	return c.NoContent(http.StatusNoContent)
 }
 
-func main() {
-    e := echo.New()
-
-    // Routes for Product controller
-    e.GET("/products", getAllProducts)
-    e.GET("/products/:id", getProductByID)
-    e.POST("/products", createProduct)
-    e.PUT("/products/:id", updateProduct)
-    e.DELETE("/products/:id", deleteProduct)
-
-    e.Logger.Fatal(e.Start(":8080"))
-}
