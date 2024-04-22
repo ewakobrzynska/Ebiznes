@@ -46,7 +46,7 @@
 
 :white_check_mark: 3.5 Należy stworzyć model Produktów wykorzystując gorm oraz wykorzystać model do obsługi produktów (CRUD) w kontrolerze (zamiast listy) [Link do commita2](https://github.com/ewakobrzynska/Ebiznes/commit/b75f46b20d78c061b7333bbd8ed7cc62c00c9635)
 
-:white_check_mark: 4.0 Należy dodać model Koszyka oraz dodać odpowiedni endpoint [Link do commita3](https://github.com/ewakobrzynska/Ebiznes/commit/31855bc1191f4602aff9cb3f13e24d4d02b03660)
+:white_check_mark: 4.0 Należy dodać model Koszyka oraz dodać odpowiedni endpoint 
 
 :x: 4.5 Należy stworzyć model kategorii i dodać relację między kategorią, a produktem
 
