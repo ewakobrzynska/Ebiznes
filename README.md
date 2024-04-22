@@ -54,13 +54,15 @@
 
 
 
-**Zadanie 5** [Frontend]
+**Zadanie 5** [Frontend](https://github.com/ewakobrzynska/Ebiznes/tree/main/ex5/moja-aplikacja)
 
 Należy stworzyć aplikację kliencką wykorzystując bibliotekę React.js. W ramach projektu należy stworzyć trzy komponenty: Produkty, Koszyk oraz Płatności. Koszyk oraz Płatności powinny wysyłać do aplikacji serwerowej dane, a w Produktach powinniśmy pobierać dane o produktach z aplikacji serwerowej. Aplikacja serwera w jednym z trzech języków: Kotlin, Scala, Go. Dane pomiędzy wszystkimi komponentami powinny być przesyłane za pomocą React hooks.
 
-:x: 3.0 W ramach projektu należy stworzyć dwa komponenty: Produkty oraz Płatności; Płatności powinny wysyłać do aplikacji serwerowej dane, a w Produktach powinniśmy pobierać dane o produktach z aplikacji serwerowej
-;
-:x: 3.5 Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing
+:white_check_mark: 3.0 W ramach projektu należy stworzyć dwa komponenty: Produkty oraz Płatności; Płatności powinny wysyłać do aplikacji serwerowej dane, a w Produktach powinniśmy pobierać dane o produktach z aplikacji serwerowej [Link do commita1](https://github.com/ewakobrzynska/Ebiznes/commit/1d0c4bab209c84a72eeefc73865a3cdd36c17e1c)
+
+
+:white_check_mark: 3.5 Należy dodać Koszyk wraz z widokiem; należy wykorzystać routing [Link do commita2](https://github.com/ewakobrzynska/Ebiznes/commit/872c5c340f9cb794af209b8edd4be042fbec8e5b)
+
 
 :x: 4.0 Dane pomiędzy wszystkimi komponentami powinny być przesyłane za pomocą React hooks
 
