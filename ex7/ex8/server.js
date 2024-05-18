@@ -11,8 +11,6 @@ app.use(bodyParser.json());
 // Routes
 app.use('/api/users', userRoutes);
 
-//const mongoose = require('mongoose');
-
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/myapp', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected...'))
