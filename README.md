@@ -92,15 +92,15 @@ Testy mają w sumie zawierać minimum 50 asercji (3.5). Mają również uruchami
 :x: 5.0 Należy uruchomić testy funkcjonalne na Browserstacku
 
 
-**Zadanie 8** [Oauth2]()
+**Zadanie 8** [Oauth2](https://github.com/ewakobrzynska/Ebiznes/tree/main/ex8)
 
 Należy skonfigurować klienta Oauth2 (4.0). Dane o użytkowniku wraz z tokenem powinny być przechowywane po stronie bazy serwera, a nowy token (inny niż ten od dostawcy) powinien zostać wysłany do klienta (React). Można zastosować mechanizm sesji lub inny dowolny (5.0). Zabronione jest tworzenie klientów bezpośrednio po stronie React'a wyłączając z komunikacji aplikację serwerową, np. wykorzystując auth0.
 
 Prawidłowa komunikacja: react-sewer-dostawca-serwer(via return uri)-react.
 
-:white_check_mark: 3.0 logowanie przez aplikację serwerową (bez Oauth2)
+:white_check_mark: 3.0 logowanie przez aplikację serwerową (bez Oauth2) [Commit](https://github.com/ewakobrzynska/Ebiznes/commit/cc9d49a4c75374f6a7b9cab522c58d4c27812002)
 
-:white_check_mark: 3.5 rejestracja przez aplikację serwerową (bez Oauth2)
+:white_check_mark: 3.5 rejestracja przez aplikację serwerową (bez Oauth2) [Commit](https://github.com/ewakobrzynska/Ebiznes/commit/cc9d49a4c75374f6a7b9cab522c58d4c27812002)
 
 4.0 logowanie via Google OAuth2
 
