@@ -1,31 +1,29 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
+const passport = require('passport');
 
-const UserSchema = new mongoose.Schema({
-    username: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    password: {
-        type: String,
-        required: true
-    }
-});
+// Funkcja obsługująca Google OAuth2
+exports.googleAuth = passport.authenticate('google', { scope: ['profile', 'email'] });
 
-UserSchema.pre('save', async function(next) {
-    if (!this.isModified('password')) return next();
-    try {
-        const salt = await bcrypt.genSalt(10);
-        this.password = await bcrypt.hash(this.password, salt);
-        next();
-    } catch (err) {
-        next(err);
-    }
-});
-
-UserSchema.methods.matchPassword = async function(password) {
-    return await bcrypt.compare(password, this.password);
+exports.googleCallback = (req, res) => {
+    passport.authenticate('google', { failureRedirect: '/login' }, (err, user, info) => {
+        if (err) {
+            return res.status(500).json({ msg: 'Server error' });
+        }
+        if (!user) {
+            return res.status(400).json({ msg: 'Invalid credentials' });
+        }
+        const payload = {
+            user: {
+                id: user.id
+            }
+        };
+        jwt.sign(
+            payload,
+            'secret',
+            { expiresIn: 360000 },
+            (err, token) => {
+                if (err) throw err;
+                res.json({ token });
+            }
+        );
+    })(req, res);
 };
-
-module.exports = mongoose.model('User', UserSchema);

@@ -1,17 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const passport = require('passport');
 const userRoutes = require('./routes/user');
+require('./config/passport'); // Konfiguracja Passport.js
 
 const app = express();
 
 // Middleware
 app.use(bodyParser.json());
+app.use(passport.initialize());
 
 // Routes
 app.use('/api/users', userRoutes);
-
-//const mongoose = require('mongoose');
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/myapp', { useNewUrlParser: true, useUnifiedTopology: true })

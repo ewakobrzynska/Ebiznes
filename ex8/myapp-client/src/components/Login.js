@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+/*
 const Login = () => {
     const [formData, setFormData] = useState({
         username: '',
@@ -34,5 +34,21 @@ const Login = () => {
         </form>
     );
 };
+*/
+import React from 'react';
+
+const Login = () => {
+  const googleLogin = () => {
+    window.location.href = 'http://localhost:8084/api/users/oauth2/google';
+  };
+
+  return (
+    <div>
+      <h2>Login</h2>
+      <button onClick={googleLogin}>Login with Google</button>
+    </div>
+  );
+};
+
 
 export default Login;
