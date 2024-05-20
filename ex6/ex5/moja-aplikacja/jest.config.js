@@ -11,6 +11,12 @@ module.exports = {
     // w pliku jest.config.js lub w konfiguracji Jesta
 
     testEnvironment: 'jsdom',
+    globals: {
+      'ts-jest': {
+        tsconfig: 'path/to/your/tsconfig.json',
+        esModuleInterop: true,
+      },
+    },
   
   
   

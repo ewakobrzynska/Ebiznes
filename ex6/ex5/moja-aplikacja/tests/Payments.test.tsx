@@ -2,6 +2,8 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Payments from '../src/components/Payments';
+//import fetch from 'node-fetch';
+const fetch = require('node-fetch');
 
 describe('Payments Component', () => {
   beforeEach(() => {

@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Cart from '../src/components/Cart';
+import fetch from 'node-fetch';
 
 describe('Cart Component', () => {
   const cartItems = [

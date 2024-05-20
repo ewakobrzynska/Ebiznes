@@ -12,10 +12,10 @@ const Cart = ({ cart, setCart }) => {
         {cart.map(item => (
           <li key={item.id}>
             {item.name} - {item.price}
-            <button onClick={() => removeFromCart(item.id)}>Usuń</button>
+            <button onClick={() => removeFromCart(item.id)}>Usuń {item.name}</button>
           </li>
         ))}
-        {/* Renderuj przyciski Usuń tylko wtedy, gdy są elementy w koszyku */}
+        {/* Render the "Wyczyść koszyk" button only when there are items in the cart */}
         {cart.length > 0 && <button onClick={() => setCart([])}>Wyczyść koszyk</button>}
       </ul>
     </div>
