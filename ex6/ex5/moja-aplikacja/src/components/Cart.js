@@ -15,6 +15,8 @@ const Cart = ({ cart, setCart }) => {
             <button onClick={() => removeFromCart(item.id)}>Usuń</button>
           </li>
         ))}
+        {/* Renderuj przyciski Usuń tylko wtedy, gdy są elementy w koszyku */}
+        {cart.length > 0 && <button onClick={() => setCart([])}>Wyczyść koszyk</button>}
       </ul>
     </div>
   );
