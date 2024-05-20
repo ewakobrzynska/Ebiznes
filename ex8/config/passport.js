@@ -3,9 +3,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const User = require('../models/User');
 
 passport.use(new GoogleStrategy({
-    clientID: '',
-    clientSecret: '',
-    callbackURL: ''
+    
 }, async (accessToken, refreshToken, profile, done) => {
     try {
         let user = await User.findOne({ googleId: profile.id });
