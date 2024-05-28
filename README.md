@@ -107,7 +107,7 @@ Należy dodać projekt aplikacji klienckiej oraz serwerowej (jeden branch, dwa r
 
 :white_check_mark: 4.5 Należy wyeliminować wszystkie podatności oraz błędy bezpieczeństwa w kodzie w Sonarze (kod aplikacji serwerowej) [Commit](https://github.com/ewakobrzynska/Ebiznes/commit/bb547400251d97a099ba8b8cdcb58cdde86b9b0e)
 
-
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ewakobrzynska_Ebiznes&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ewakobrzynska_Ebiznes)
 
 5.0 Należy wyeliminować wszystkie błędy oraz zapaszki w kodzie aplikacji klienckiej
 
