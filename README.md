@@ -1,7 +1,6 @@
 # E-biznes
 
 ---
----
 **Zadanie 1** [Docker](https://github.com/ewakobrzynska/Ebiznes/tree/main/Ex1)
 
 :white_check_mark: 3.0 wymaganie 1 [Link do commita 1](https://github.com/ewakobrzynska/Ebiznes/commit/6d50b574b8d617dc16c6a3eed0dcc88f9399b271)
