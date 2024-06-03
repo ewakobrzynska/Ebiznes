@@ -13,6 +13,7 @@ import io.ktor.server.request.*
 import io.ktor.client.statement.*
 import io.ktor.serialization.gson.*
 import io.ktor.client.plugins.contentnegotiation.*
+import DiscordBot
 
 fun main() {
     // Pobierz token Discorda z zmiennych środowiskowych
