@@ -43,4 +43,6 @@ jobs:
           password: ${{ secrets.EMAIL_PASSWORD }}
           subject: 'Application Build Notification'
           body: 'The application was successfully built and tested.'
+          from: ${{ secrets.EMAIL_ADDRESS }}
+          fromname: 'Build Notification'
           to: ${{ secrets.EMAIL_TO }}
