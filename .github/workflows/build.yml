@@ -23,7 +23,7 @@ jobs:
 
       - name: Build with Gradle
         run: |
-          cd ebiznes/zadanie10/backend
+          cd zadanie10/backend
           ./gradlew build
 
       - name: Run tests
