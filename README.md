@@ -159,13 +159,15 @@ Dla studentów, którzy nie chcą lub nie mogą korzystać z GPT, zamiast GPT na
 
 ---
 
-**Zadanie 10** [Chmura/CI]()
+**Zadanie 10** [Chmura/CI](https://github.com/ewakobrzynska/Ebiznes/tree/main/zadanie10)
 
 Należy wykorzystać GitHub Actions (dopuszczalne są inne rozwiązania CI) oraz chmurę Azure (dopuszczalne inne chmury), aby zbudować oraz zdeployować aplikację kliencką (frontend) oraz serwerową (backend) jako osobne dwie aplikacje. Należy do tego wykorzystać obrazy dockerowe, a aplikacje powinny działać na kontenerach. Dopuszczalne jest zbudowanie wcześniej aplikacji (jar package) oraz budowanie aplikacji via Github Actions. Należy zwrócić uwagę na zasoby dostępne na chmurze.
 
-3.0 Należy stworzyć odpowiednie instancje po stronie chmury na dockerze
+:white_check_mark: 3.0 Należy stworzyć odpowiednie instancje po stronie chmury na dockerze [Commit](https://github.com/ewakobrzynska/Ebiznes/commit/dc2481eeff96c467a62421493d6c9e1cfc9a3726)
 
-3.5 Stworzyć odpowiedni pipeline w Github Actions do budowania aplikacji (np. via fatjar)
+
+:white_check_mark: 3.5 Stworzyć odpowiedni pipeline w Github Actions do budowania aplikacji (np. via fatjar) [Commit]()
+
 
 4.0 Dodać notyfikację mailową o zbudowaniu aplikacji
 
