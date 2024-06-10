@@ -166,10 +166,10 @@ Należy wykorzystać GitHub Actions (dopuszczalne są inne rozwiązania CI) oraz
 :white_check_mark: 3.0 Należy stworzyć odpowiednie instancje po stronie chmury na dockerze [Commit](https://github.com/ewakobrzynska/Ebiznes/commit/dc2481eeff96c467a62421493d6c9e1cfc9a3726)
 
 
-:white_check_mark: 3.5 Stworzyć odpowiedni pipeline w Github Actions do budowania aplikacji (np. via fatjar) [Commit]()
+:white_check_mark: 3.5 Stworzyć odpowiedni pipeline w Github Actions do budowania aplikacji (np. via fatjar) [Commit](https://github.com/ewakobrzynska/Ebiznes/commit/1b578aac4edff6bbfe5641ec67b9507222e93e9a)
 
 
-4.0 Dodać notyfikację mailową o zbudowaniu aplikacji
+:white_check_mark: 4.0 Dodać notyfikację mailową o zbudowaniu aplikacji [Commit](https://github.com/ewakobrzynska/Ebiznes/commit/ddafcd53f0ea015e2909795b3d24a2a7e16ce1d6)
 
 4.5 Dodać krok z deploymentem aplikacji serwerowej oraz klienckiej na chmurę
 
