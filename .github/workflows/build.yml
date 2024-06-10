@@ -30,4 +30,6 @@ jobs:
           ./gradlew build
 
       - name: Run tests
-        run: ./gradlew test
+        run: |
+          cd zadanie10/backend
+          ./gradlew test
