@@ -35,14 +35,13 @@ jobs:
           ./gradlew test
 
       - name: Send email notification
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@v3.7.2
         with:
           server_address: smtp.gmail.com
           server_port: 465
-          username: ${{ secrets.EMAIL_ADDRESS }}
+          username: ${{secrets.EMAIL_ADDRESS}}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: 'Application Build Notification'
-          body: 'The application was successfully built and tested.'
-          from: ${{ secrets.EMAIL_ADDRESS }}
-          fromname: 'Build Notification'
-          to: ${{ secrets.EMAIL_TO }}
+          subject: Build finished
+          body: Build job of ${{github.repository}} completed successfully!
+          to: ${{secrets.EMAIL_ADDRESS}}
+          from: ${{secrets.EMAIL_ADDRESS}}
